@@ -1,10 +1,10 @@
 <?php
 include_once './_conexao.php';
+include_once './_header.php';
 
-
-$sql = "";
-
-
+$id = $_GET["id"];
+$sql = "DELETE FROM setor WHERE SetorID = ".$id;
+$resultado = mysqli_query($conexao, $sql);
 
 // faz o redirecionamento
 header("Location: ./setor-lista.php", true, 302);
